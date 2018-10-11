@@ -24,6 +24,7 @@ if (Meteor.isClient) {
      */
     var credentialRequestCompleteCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
     Utt.requestCredential(options, credentialRequestCompleteCallback);
+    
   };
 
 /**
