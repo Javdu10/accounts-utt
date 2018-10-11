@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'tunguska:accounts-imgur',
-  version: '0.0.1',
-  summary: 'OAuth2 for Imgur',
-  git: 'https://github.com/robfallows/tunguska-accounts-imgur',
+  name: 'jav:accounts-utt',
+  version: '0.0.2',
+  summary: 'OAuth2 for UTT',
+  git: 'https://github.com/Javdu10/tunguska-accounts-imgur.git',
   documentation: 'README.md'
 });
 
@@ -15,9 +15,9 @@ Package.onUse(function(api) {
   api.imply('accounts-base', ['client', 'server']);
 
   api.use('accounts-oauth', ['client', 'server']);
-  api.use('tunguska:imgur@0.0.1', ['client', 'server']);
+  api.use('jav:utt@0.0.1', ['client', 'server']);
 
-  api.addFiles('accounts-imgur_login_button.css', 'client');
+  api.addFiles('accounts-utt_login_button.css', 'client');
 
-  api.addFiles('accounts-imgur.js');
+  api.addFiles('accounts-utt.js');
 });
