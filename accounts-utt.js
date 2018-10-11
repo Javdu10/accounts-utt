@@ -9,7 +9,7 @@ Accounts.oauth.registerService('utt');
  * Client functionality (boilerplate).
  */
 if (Meteor.isClient) {
-  Meteor.loginWithUTT = function(options, callback) {
+  Meteor.loginWithUtt = function(options, callback) {
     
     /**
      * support (options, callback) and (callback)
@@ -23,7 +23,7 @@ if (Meteor.isClient) {
      * 
      */
     var credentialRequestCompleteCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
-    UTT.requestCredential(options, credentialRequestCompleteCallback);
+    Utt.requestCredential(options, credentialRequestCompleteCallback);
   };
 
 /**
@@ -36,7 +36,7 @@ if (Meteor.isClient) {
       /**
        * Logged in user gets whitelisted fields + accessToken + expiresAt.
        */
-      UTT.whitelistedFields.concat(['accessToken', 'expiresAt']), // don't publish refresh token
+      Utt.whitelistedFields.concat(['accessToken', 'expiresAt']), // don't publish refresh token
       function(subfield) {
         return 'services.utt.' + subfield;
       }),
@@ -46,7 +46,7 @@ if (Meteor.isClient) {
        * Other users get whitelisted fields without emails, because even with
        * autopublish, no legitimate web app should be publishing all users' emails.
        */
-      _.without(UTT.whitelistedFields, 'email', 'verified_email'),
+      _.without(Utt.whitelistedFields, 'email', 'verified_email'),
       function(subfield) {
         return 'services.utt.' + subfield;
       })
